@@ -1,0 +1,144 @@
+body{
+    font-size: 30px;
+    box-sizing: border-box;
+}
+
+
+.wrapper{
+    display: grid;
+    gap: 0.3rem;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-areas: 
+    "header header header"
+    "title title title"
+    "banner banner banner-box-1"
+    "banner banner banner-box-2"
+    "side-menu main main"
+    "tags main main"
+    "recent main main"
+    "footer footer footer"
+    ;
+
+}
+
+/* targeting the first level element/child */
+
+.wrapper>*{
+    padding:1rem;
+    display: grid;
+    justify-content: center;
+    align-items:center;
+}
+
+.header{
+    grid-area:header;
+    background: black;
+    color:white;
+}
+
+.title{
+    grid-area:title;
+    background: blue;
+}
+
+.banner{
+    grid-area:banner;
+    background: radial-gradient(red,yellow, blue);
+    
+}
+.banner-box-1{
+    grid-area: banner-box-1;
+    background: rgb(131, 78, 78);
+}
+.banner-box-2{
+    grid-area:banner-box-2;
+    background: cyan;
+
+}
+.side-menu{
+    grid-area: side-menu;
+    background: green;
+
+}
+.tags{
+    grid-area: tags;
+    background-color:white;
+}
+.recent{
+    grid-area: recent;
+    background: pink;
+}
+.main{
+    grid-area: main;
+    flex-flow:row wrap;
+
+    
+display: flex;
+
+}
+.main>div{
+    min-width:200px;
+    min-height:200px;
+    background: blueviolet;
+    margin:1rem;
+    color:white;
+    border-radius: 3px;
+    box-shadow: -1px 3px 5px grey;
+
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer{
+    grid-area: footer;
+    background: black;
+    color:white;
+}
+
+/* media queries */
+/* @media device type (target size){
+    style
+} */
+/* for ipads */
+@media (max-width:768px){
+    .wrapper{
+        display: grid;
+        gap: 0.3rem;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "header header"
+        "title title"
+        "banner banner"
+        "banner-box-1 banner-box-2"
+        "side-menu side-menu"
+        "main main"
+        "tags recent"
+        "footer footer"
+        ;
+    
+    }
+       
+    }
+
+/* for mobiles */
+@media (max-width:576px){
+         .wrapper{
+            display: grid;
+            gap: 0.3rem;
+            grid-template-columns: auto;
+            grid-template-areas: 
+            "header"
+            "title"
+            "banner"
+            "banner-box-1"
+            "banner-box-2"
+            "side-menu"
+            "main"
+            "tags"
+            "recent"
+            "footer"
+            ;
+        
+        }
+    }
